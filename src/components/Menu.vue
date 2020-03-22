@@ -1,0 +1,25 @@
+<template>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <table class="table table-hover">
+                <thead class="thead-default">
+                    <tr>
+                        <td>Size</td>
+                        <td>Price</td>
+                        <td>Add to basket</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Marghrita </strong></td>
+                    </tr>
+                    <tr>
+                        <td>9"</td>
+                        <td>12.95</td>
+                        <td><button class="btn btn-sm btn-outline-success" type="button">+</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
