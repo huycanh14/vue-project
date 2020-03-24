@@ -52,8 +52,12 @@
 </template>
 
 <script>
-import { dbMenuRef } from '../firebaseConfig'
+import { dbMenuRef } from '../firebaseConfig';
+
     export default {
+        components: {
+            
+        },
         data() {
             return {
                 newPizza: {
