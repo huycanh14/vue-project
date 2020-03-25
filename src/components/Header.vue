@@ -4,10 +4,11 @@
       <a class="navbar-brand" href="/">PIZZA PLANET</a>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a href="/" class="nav-link">Home</a>
+          <router-link :to="{name: 'homeLink'}" class="nav-link">Home</router-link>
+            <!-- <a href="/" class="nav-link">Home</a> -->
         </li>
         <li class="nav-item">
-            <a href="/" class="nav-link">Menu</a>
+          <router-link :to="{name: 'menuLink'}" class="nav-link">Menu</router-link>
         </li>
       </ul>
     </nav>
@@ -16,7 +17,6 @@
 
 <script>
   export default {
-
   }
 
 </script>

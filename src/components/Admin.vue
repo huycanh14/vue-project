@@ -69,6 +69,23 @@
             ppNewPizza: NewPizza,
             ppLogin: Login,
         },
+        data() {
+            return {
+            }
+        },
+        // beforeRouteEnter: (to, from, next) => {
+        //     alert(`Hello ${this.name}`);
+        //     next(vm => {
+        //         alert(`Hello ${vm.name}`);
+        //     });
+        // }
+        beforeRouteLeave: (to, from, next) => {
+            if(confirm("Have you remember to log out") == true){
+                next();
+            } else {
+                next(false);
+            }
+        }
     }
 </script>
 

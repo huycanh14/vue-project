@@ -1,23 +1,17 @@
 <template>
-  <div class="card" >
-    <div class="card-body">
-      <h5 class="card-title">Contact</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">
-        <address>
-            <strong>Pizza Planet</strong> <br>
-            Address line 1 <br>
-            Address line 2 <br>
-            Phone: (+84) 983.746.278
-        </address>
-        <address>
-            <strong>Email: canh.huy.web@gmail.com</strong> <br>
-            <p>contact@pizzaplanet.com</p>
-        </address>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
+  <div>
+    <p>Click on the links below for more info:</p>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <ul class="navbar-nav mr-auto">
+        <router-link :to="{name: 'historyLink'}" class="nav-link">History</router-link>
+        <router-link :to="{name: 'contactLink'}" class="nav-link">Contact</router-link>
+        <router-link :to="{name: 'orderingGuideLink'}" class="nav-link">Ordering Guide</router-link>
+        <router-link :to="{name: 'deliveryLink'}" class="nav-link">Delivery</router-link>
+      </ul>
+    </nav>
+    <router-view></router-view>
   </div>
+  
 </template>
 
 <script>
