@@ -20,7 +20,7 @@ export const routes = [
     },
     { path: "/menu", component:  Menu, name: "menuLink" },
     { path: "/admin", component:  Admin, name: "adminLink", beforeEnter: (to, from, next) => {
-      alert('This area is for authorised users only, please login to continuse.');
+      // alert('This area is for authorised users only, please login to continuse.');
       next();
     } },
     { path:"/about", component: About, children:[

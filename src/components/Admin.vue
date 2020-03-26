@@ -13,9 +13,9 @@
                             <th>Remove from menu</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody  v-for="(item, index) in getMenuItems" :key="index">
                         <tr>
-                            <td>Margheita</td>
+                            <td>{{ item.name }}</td>
                             <td><button class="btn btn-outline-danger btn-sm">X</button></td>
                         </tr>
                     </tbody>
@@ -25,7 +25,7 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <h3>Current orders:</h3>
+                <h3>Current orders: {{ numberOfOrders }} </h3>
                 <table class="table table-hover">
                     <thead class="thead-defult">
                         <tr>
@@ -79,13 +79,21 @@
         //         alert(`Hello ${vm.name}`);
         //     });
         // }
-        beforeRouteLeave: (to, from, next) => {
-            if(confirm("Have you remember to log out") == true){
-                next();
-            } else {
-                next(false);
+        // beforeRouteLeave: (to, from, next) => {
+        //     if(confirm("Have you remember to log out") == true){
+        //         next();
+        //     } else {
+        //         next(false);
+        //     }
+        // },
+        computed: {
+            getMenuItems() {
+                return this.$store.state.menuItems; 
+            },
+            numberOfOrders(){
+                return this.$store.getters.numberOfOrders;
             }
-        }
+        },
     }
 </script>
 

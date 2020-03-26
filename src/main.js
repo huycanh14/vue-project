@@ -1,16 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from './App.vue'
 import { routes } from './routes'
+import { store } from './store/store.js'
+import App from './App.vue'
 Vue.use(VueRouter)
-
-
 
 const router = new VueRouter({
   routes,
   hash: false,
   mode: 'history',
-  scrollBehavior (to, from, savedPosition) {
+  //scrollBehavior (to, from, savedPosition) {
     // return {x: 0, y: 200}
     // return { selector: '.btn' }
     /*if(savedPosition){
@@ -18,12 +17,12 @@ const router = new VueRouter({
     } else {
       return {x: 0, y: 0}
     }*/
-    if(to.hash){
-      return{
-        selector: to.hash
-      }
-    }
-  }
+  //   if(to.hash){
+  //     return{
+  //       selector: to.hash
+  //     }
+  //   }
+  // }
 });
 
 // router.beforeEach((to, from, next)  => {
@@ -43,5 +42,6 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
