@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as actions from './actions'
+import * as getters from './getters'
+import * as mutations from './mutations'
 
 Vue.use(Vuex);
 
@@ -44,30 +47,16 @@ export const store = new Vuex.Store({
         orders: [],
         currentUser: null,
     },
-    getters: {
-        getMenuItems: state => state.menuItems,
-        numberOfOrders: state => state.orders.length,
-        currentUser: state => state.currentUser,
-    },
-    mutations: {
-        addOrder: (state, orders) => state.orders.push(orders),
-        userStatus (state, user){
-            if(user){
-                state.currentUser = user.email;
-            } else {
-                state.currentUser = null;
-            }
-        },
-    },
-    actions: {
-        /* Option 1: setUser(context, user) {
+    getters,
+    mutations,
+    /* actions: {
+        Option 1: setUser(context, user) {
             context.commit('userStatus', user);
             
-        },*/
+        },
         //Option 2
-        setUser({ commit }, user) {
-            commit('userStatus', user);
-        }
-    }
+        
+    }*/
+    actions
 
 })
