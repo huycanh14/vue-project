@@ -54,6 +54,7 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
     export default {
         data() {
             return {
@@ -88,11 +89,14 @@
             }
         },
         computed: {
-            getMenuItems() {
+            //getMenuItems() {
                 // console.log(this.$store.state.menuItems)
                 // return this.$store.state.menuItems;
-                return this.$store.getters.getMenuItems;
-            }
+                // return this.$store.getters.getMenuItems;
+            //}
+            ...mapGetters([
+                'getMenuItems'
+            ])
         },
     }
 </script>

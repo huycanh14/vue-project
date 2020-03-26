@@ -64,6 +64,7 @@
 <script>
     import NewPizza from "./NewPizza.vue";
     import Login from './Login.vue'
+    import { mapGetters } from 'vuex'
     export default {
         components: {
             ppNewPizza: NewPizza,
@@ -87,12 +88,17 @@
         //     }
         // },
         computed: {
-            getMenuItems() {
+            /* Cách 1: getMenuItems() {
                 return this.$store.state.menuItems; 
             },
             numberOfOrders(){
                 return this.$store.getters.numberOfOrders;
-            }
+            }*/
+            //Cách 2
+            ...mapGetters([
+                'numberOfOrders',
+                'getMenuItems'
+            ])
         },
     }
 </script>
